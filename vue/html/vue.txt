@@ -1,0 +1,19 @@
+上传文件高github的操作:
+第五步：按照github新建仓库上的文档提示，提交项目：
+
+1.在命令行中，输入“git init”，使Test文件夹加入git管理；
+
+
+2.输入“git add .”（不要漏了“.”），将Test文件夹全部内容添加到git。
+
+ 如果要传单个文件，将“.”换成文件名就行
+3.输入“git commit -m "first commit"”（“git commit -m "提交信息"”
+）
+
+
+4.输入“git remote add origin https://github.com/shench5612390/Test.git”（git remote add origin 你自己的https地址），连接你的guthub仓库。
+
+
+5.输入“git push -u origin master”，上传项目到Github。这里会要求输入Github的账号密码，按要求输入就可以。
+
+https://www.cnblogs.com/panlangen/p/7501585.html
