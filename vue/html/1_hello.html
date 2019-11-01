@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<div id="aa">
+		dsada
+		{{msg}}
+	</div>
+	
+	<script>
+		// 我们使用Vue构造函数，来创建按一个Vue对象
+		var aa = new Vue({
+			// 每一个vue对象，要通过el来绑定一个dom元素，此为单向绑定。
+			el:"#aa",
+			// 我们通过data来定义当前vue对象的属性
+			// 只有与此vue对象绑定的dom元素，才可以访问当前vue对象的属性, 语法是: {{属性名}}
+			data:{
+				msg:"hello大单位"
+			}
+		})
+	</script>
+</body>
+</html>

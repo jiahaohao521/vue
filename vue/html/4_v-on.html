@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<!-- 
+		利用v-on来添加事件，则可以调用vue对象内部的函数！！
+		调用方法：如果无参，可以不带()
+	-->
+	<div id="aa">
+		<button type="button" v-on:click="f1">按钮1</button>
+		<button type="button" @click="f2">按钮2</button>
+	</div>
+	<script>
+		var aa = new Vue({
+			el:"#aa",
+			data:{
+				msg:"哇哈哈队长",
+				msg2:"且队长"
+			},
+			methods:{
+				f1:function(){
+					console.log("f1")
+				},
+				//定义方法时:可以简写为f2()
+				f2(){
+					console.log("f2")
+				}
+			}
+		})
+	</script>
+	
+</body>
+</html>

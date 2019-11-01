@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		<!--消除闪烁-->
+		[v-cloak]{
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<div id="aa" v-cloak>
+		dsada
+		{{msg}}<br/>
+		
+		<!-- v-text会使用指定的vue对的属性，把标记内容覆盖,不会编译html内容 -->
+		<p v-test="msg">-------------</p>
+		
+		<!-- v-html也会使用指定的vue对的属性，把标记内容覆盖，但是它还会解释标记！（加载html） -->
+		<p v-html="msg">+++++++++++++++++++</p>
+	</div>
+	
+	<script>
+		window.onload = function(){
+			var aa = new Vue({
+				el:"#aa",
+				data:{
+					msg:"<marquee>i can fly!!!</marquee>"
+				}
+			})
+		}
+	</script>
+	
+	<!--如果将引用放在最后，页面加载会变快，但会引起闪烁
+		为了消除闪烁，需用到vue中的v-cloak
+	-->
+	<script src="../node_modules/vue/dist/vue.min.js"></script>
+</body>
+</html>

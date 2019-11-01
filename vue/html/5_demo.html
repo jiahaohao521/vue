@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+	<!-- 
+		制作走马灯特效
+	-->
+	<div id="aa">
+		<div id="d1">{{msg}}</div>
+		<button type="button" v-on:click="start">启动</button>
+		<button type="button" @click="stop">停止</button>
+	</div>
+	<script>
+		var aa = new Vue({
+			el:"#aa",
+			data:{
+				msg:"德玛西亚，永世长存```",
+				intervalId: null 	//定义定时器的id
+			},
+			methods:{
+				start:function(){
+					if(this.intervalId != null){
+						return;
+					}
+					var self = this;
+					//制作定时器
+					this.intervalId = setInterval(function(){
+						self.msg = self.msg.substring(1) + self.msg.substring(0,1);
+					},200)
+					
+				},
+				stop:function(){
+					clearInterval(this.intervalId),
+					this.intervalId = null
+				}
+			}
+		})
+	</script>
+	
+</body>
+</html>
